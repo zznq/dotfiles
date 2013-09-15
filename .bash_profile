@@ -22,12 +22,10 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/Projects/libs/node/bin:$HOME/Project
 export PATH
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+if [ "$(uname -s)" == "Linux" ]; then
   export QMAKE=/usr/bin/qmake-qt4
   export PGDATA=/var/lib/postgres/data
-fi
-
-if [ "$(uname)" == "Darwin" ]; then
+elif [ "$(uname -s)" == "Darwin" ]; then
  export PGDATA=/usr/local/var/postgres postgres
 fi
 
