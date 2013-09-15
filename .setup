@@ -1,0 +1,28 @@
+#!/bin/bash
+
+ln -s ~/Projects/dotfiles/.bashrc ~/.bashrc
+ln -s ~/Projects/dotfiles/.bash_profile ~/.bash_profile
+ln -s ~/Projects/dotfiles/.bash_prompt ~/.bash_prompt
+ln -s ~/Projects/dotfiles/.functions ~/.functions
+ln -s ~/Projects/dotfiles/.vimrc ~/.vimrc
+
+
+mkdir -p ~/.vim/autoload ~/.vim/bundle;
+curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+cd ~/.vim/bundle
+
+git clone https://github.com/mileszs/ack.vim.git
+git clone https://github.com/kien/ctrlp.vim.git
+git clone https://github.com/Raimondi/delimitMate.git
+git clone https://github.com/ervandew/supertab.git
+git clone https://github.com/scrooloose/syntastic.git
+git clone https://github.com/tomtom/tlib_vim.git
+git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
+git clone git://github.com/tpope/vim-bundler.git
+git clone git://github.com/tpope/vim-endwise.git
+git clone git://github.com/tpope/vim-fugitive.git
+git clone git://github.com/tpope/vim-rails.git
+git clone git://github.com/tpope/vim-repeat.git
+git clone https://github.com/garbas/vim-snipmate.git
+git clone git://github.com/tpope/vim-unimpaired.git
