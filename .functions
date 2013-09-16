@@ -14,5 +14,5 @@ function fif() {
 }
 
 function whatever() {
-  echo 'hey buddy'
+  echo 'my buddy and me'
 }
