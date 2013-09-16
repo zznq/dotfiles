@@ -12,3 +12,7 @@ function f() {
 function fif() {
   find . -type f -exec grep -i "$1" {} \; -print
 }
+
+function whatever() {
+  echo 'my buddy and me'
+}
