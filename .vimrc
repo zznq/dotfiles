@@ -31,6 +31,7 @@ let mapleader=','
 
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabNoCompleteAfter = ['^', '\s', '\n']
 
 " syntax highlighting
 syntax on
