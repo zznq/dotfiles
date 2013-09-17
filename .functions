@@ -10,5 +10,5 @@ function f() {
 
 # find in files
 function fif() {
-  find . -type f -exec grep -i "$1" {} \; -print
+  find ${2:-.} -type f -exec grep -i "$1" {} \; -print
 }
