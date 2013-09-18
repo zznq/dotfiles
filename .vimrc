@@ -42,5 +42,7 @@ filetype plugin indent on
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd='CtrlP'
 
+let g:ctrlp_custom_ignore = '\v(node_modules|bower_components|dist)$'
+
 " Ruby
 imap <C-l> <Space>=><Space>
