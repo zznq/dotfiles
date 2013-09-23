@@ -29,6 +29,9 @@ set encoding=utf-8 nobomb
 
 let mapleader=','
 
+set listchars=tab:>-,trail:~,extends:>,precedes:<
+set list
+
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabNoCompleteAfter = ['^', '\s', '\n']
