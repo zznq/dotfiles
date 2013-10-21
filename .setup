@@ -30,3 +30,4 @@ git clone https://github.com/thoughtbot/vim-rspec.git
 git clone https://github.com/cakebaker/scss-syntax.vim.git
 git clone https://github.com/tpope/vim-haml.git
 git clone https://github.com/kchmck/vim-coffee-script.git
+git clone https://github.com/powerman/vim-plugin-autosess.git
