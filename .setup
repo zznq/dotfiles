@@ -1,33 +1,122 @@
 #!/bin/bash
 
-ln -s ~/Projects/dotfiles/.bashrc ~/.bashrc
-ln -s ~/Projects/dotfiles/.bash_profile ~/.bash_profile
-ln -s ~/Projects/dotfiles/.bash_prompt ~/.bash_prompt
-ln -s ~/Projects/dotfiles/.functions ~/.functions
-ln -s ~/Projects/dotfiles/.vimrc ~/.vimrc
+if ! [ -L ~/.bashrc ]; then
+  echo "Creating .bashrc"
+  ln -s ~/Projects/dotfiles/.bashrc ~/.bashrc
+else
+  echo "Already created .bashrc"
+fi
 
+if ! [ -L ~/.bash_profile ]; then
+  echo "Creating ~/.bash_profile"
+  ln -s ~/Projects/dotfiles/.bash_profile ~/.bash_profile
+else
+  echo "Already created ~/.bash_profile"
+fi
 
-mkdir -p ~/.vim/autoload ~/.vim/bundle;
-curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+if ! [ -L ~/.bash_prompt ]; then
+  echo "Creating ~/.bash_prompt"
+  ln -s ~/Projects/dotfiles/.bash_prompt ~/.bash_prompt
+else
+  echo "Already created ~/.bash_prompt"
+fi
+
+if ! [ -L ~/.functions ]; then
+  echo "Creating ~/.functions"
+  ln -s ~/Projects/dotfiles/.functions ~/.functions
+else
+  echo "Already created ~/.functions"
+fi
+
+if ! [ -L ~/.vimrc ]; then
+  echo "Creating ~/.vimrc"
+  ln -s ~/Projects/dotfiles/.vimrc ~/.vimrc
+else
+  echo "Already created ~/.vimrc"
+fi
+
+if [ -d ~/.vim/bundle/ ]; then
+  echo "creating ~/.vim/bundle/"
+  mkdir -p ~/.vim/autoload ~/.vim/bundle;
+  curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+else
+  echo "Already created ~/.vim/bundle"
+fi
 
 cd ~/.vim/bundle
 
-git clone https://github.com/mileszs/ack.vim.git
-git clone https://github.com/kien/ctrlp.vim.git
-git clone https://github.com/Raimondi/delimitMate.git
-git clone https://github.com/ervandew/supertab.git
-git clone https://github.com/scrooloose/syntastic.git
-git clone https://github.com/tomtom/tlib_vim.git
-git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
-git clone git://github.com/tpope/vim-bundler.git
-git clone git://github.com/tpope/vim-endwise.git
-git clone git://github.com/tpope/vim-fugitive.git
-git clone git://github.com/tpope/vim-rails.git
-git clone git://github.com/tpope/vim-repeat.git
-git clone https://github.com/garbas/vim-snipmate.git
-git clone git://github.com/tpope/vim-unimpaired.git
-git clone https://github.com/thoughtbot/vim-rspec.git
-git clone https://github.com/cakebaker/scss-syntax.vim.git
-git clone https://github.com/tpope/vim-haml.git
-git clone https://github.com/kchmck/vim-coffee-script.git
-git clone https://github.com/powerman/vim-plugin-autosess.git
+if ! [ -d ~/.vim/bundle/ack.vim ]; then
+  git clone https://github.com/mileszs/ack.vim.git
+fi
+
+if ! [ -d ~/.vim/bundle/ctrlp.vim ]; then
+  git clone https://github.com/kien/ctrlp.vim.git
+fi
+
+if ! [ -d ~/.vim/bundle/delimitMate ]; then
+  git clone https://github.com/Raimondi/delimitMate.git
+fi
+
+if ! [ -d ~/.vim/bundle/supertab ]; then
+  git clone https://github.com/ervandew/supertab.git
+fi
+
+if ! [ -d ~/.vim/bundle/syntastic ]; then
+  git clone https://github.com/scrooloose/syntastic.git
+fi
+
+if ! [ -d ~/.vim/bundle/tlib_vim ]; then
+  git clone https://github.com/tomtom/tlib_vim.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-addon-mw-utils ]; then
+  git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-bundler ]; then
+  git clone git://github.com/tpope/vim-bundler.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-endwise ]; then
+  git clone git://github.com/tpope/vim-endwise.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-fugitive ]; then
+  git clone git://github.com/tpope/vim-fugitive.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-rails ]; then
+  git clone git://github.com/tpope/vim-rails.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-repeat ]; then
+  git clone git://github.com/tpope/vim-repeat.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-snipmate ]; then
+  git clone https://github.com/garbas/vim-snipmate.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-unimpaired ]; then
+  git clone git://github.com/tpope/vim-unimpaired.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-rspec ]; then
+  git clone https://github.com/thoughtbot/vim-rspec.git
+fi
+
+if ! [ -d ~/.vim/bundle/scss-syntax.vim ]; then
+  git clone https://github.com/cakebaker/scss-syntax.vim.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-Haml ]; then
+  git clone https://github.com/tpope/vim-Haml.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-coffee-script ]; then
+  git clone https://github.com/kchmck/vim-coffee-script.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-plugin-autosess ]; then
+  git clone https://github.com/powerman/vim-plugin-autosess.git
+fi
