@@ -14,3 +14,7 @@ export PATH
 alias be='bundle exec'
 alias brake='bundle exec rake'
 alias fixpg='ln -s /private/var/pgsql_socket/.s.PGSQL.5432 /private/tmp/.s.PGSQL.5432'
+
+alias zake='zeus rake'
+alias zspec='zeus rspec'
+alias zs='zeus s'
