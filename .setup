@@ -116,3 +116,7 @@ fi
 if ! [ -d ~/.vim/bundle/vim-coffee-script ]; then
   git clone https://github.com/kchmck/vim-coffee-script.git
 fi
+
+if ! [ -d ~/.vim/bundle/rename.vim ]; then
+  get clone https://github.com/danro/rename.vim.git
+fi
