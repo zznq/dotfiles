@@ -36,6 +36,13 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabNoCompleteAfter = ['^', '\s', '\n']
 
+map <Leader>t :call RunCurrentSpecFile()
+map <Leader>s :call RunNearestSpec()
+map <Leader>l :call RunLastSpec()
+map <Leader>a :call RunAllSpecs()
+
+let g:rspec_command = "!bin/rspec {spec}"
+
 " syntax highlighting
 syntax on
 filetype on
