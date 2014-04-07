@@ -59,3 +59,7 @@ imap <C-k> <Space>->
 
 " Ruby
 imap <C-l> <Space>=><Space>
+
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails'

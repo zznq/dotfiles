@@ -35,7 +35,7 @@ else
   echo "Already created ~/.vimrc"
 fi
 
-if [ -d ~/.vim/bundle/ ]; then
+if ! [ -d ~/.vim/bundle/ ]; then
   echo "creating ~/.vim/bundle/"
   mkdir -p ~/.vim/autoload ~/.vim/bundle;
   curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
@@ -97,6 +97,10 @@ if ! [ -d ~/.vim/bundle/vim-snipmate ]; then
   git clone https://github.com/garbas/vim-snipmate.git
 fi
 
+if ! [ -d ~/.vim/bundle/vim-snippets ]; then
+  git clone https://github.com/honza/vim-snippets.git
+fi
+
 if ! [ -d ~/.vim/bundle/vim-unimpaired ]; then
   git clone git://github.com/tpope/vim-unimpaired.git
 fi
@@ -124,3 +128,25 @@ fi
 if ! [ -d ~/.vim/bundle/vim-mustache-handlebars ]; then
   git clone https://github.com/mustache/vim-mustache-handlebars.git
 fi
+
+if ! [ -d ~/.vim/bundle/vim-surround ]; then
+  git clone https://github.com/tpope/vim-surround.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-easymotion ]; then
+  git clone https://github.com/Lokaltog/vim-easymotion.git
+fi
+
+plugins=("ack.vim" "rename.vim" "syntastic" "vim-bundler" "vim-fugitive" "vim-rails" "vim-snipmate"
+          "vim-snippets" "ctrlp.vim" "scss-syntax.vim" "tlib_vim" "vim-coffee-script" "vim-haml"
+          "vim-repeat" "vim-unimpaired" "delimitMate" "supertab" "vim-addon-mw-utils" "vim-endwise"
+          "vim-mustache-handlebars" "vim-rspec" "vim-surround" "vim-easymotion")
+
+echo "********** Update plugins *************"
+for i in "${plugins[@]}"
+do
+  cd $i
+  echo "updating"  $1
+  git pull origin master
+  cd ..
+done
