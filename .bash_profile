@@ -22,3 +22,5 @@ elif [ "$(uname -s)" == "Darwin" ]; then
 
   export PGDATA=/usr/local/var/postgres postgres
 fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
