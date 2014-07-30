@@ -142,7 +142,7 @@ if ! [ -d ~/.vim/bundle/vim-g ]; then
 fi
 
 if ! [ -d ~/.vim/bundle/vim-css-color ]; then
-  git clone https://github.com/skammer/vim-css-color.git
+  git clone https://github.com/ap/vim-css-color.git
 fi
 
 plugins=("ack.vim" "rename.vim" "syntastic" "vim-bundler" "vim-fugitive" "vim-rails" "vim-snipmate"
