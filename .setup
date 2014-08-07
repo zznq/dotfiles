@@ -145,10 +145,19 @@ if ! [ -d ~/.vim/bundle/vim-css-color ]; then
   git clone https://github.com/ap/vim-css-color.git
 fi
 
+if ! [ -d ~/.vim/bundle/vim-rake ]; then
+  git clone git://github.com/tpope/vim-rake.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-projectionist ]; then
+  git clone git://github.com/tpope/vim-projectionist.git
+fi
+
 plugins=("ack.vim" "rename.vim" "syntastic" "vim-bundler" "vim-fugitive" "vim-rails" "vim-snipmate"
           "vim-snippets" "ctrlp.vim" "scss-syntax.vim" "tlib_vim" "vim-coffee-script" "vim-Haml"
           "vim-repeat" "vim-unimpaired" "delimitMate" "supertab" "vim-addon-mw-utils" "vim-endwise"
-          "vim-mustache-handlebars" "vim-rspec" "vim-surround" "vim-easymotion" "vim-g" "vim-css-color")
+          "vim-mustache-handlebars" "vim-rspec" "vim-surround" "vim-easymotion" "vim-g" "vim-css-color"
+          "vim-rake" "vim-projectionist")
 
 echo "********** Update plugins *************"
 for i in "${plugins[@]}"

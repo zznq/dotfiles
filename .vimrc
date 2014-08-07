@@ -63,3 +63,5 @@ imap <C-l> <Space>=><Space>
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails'
+
+set tags+=gems.tags
