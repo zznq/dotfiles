@@ -43,6 +43,13 @@ else
   echo "Already created ~/.vim/bundle"
 fi
 
+if ! [ -d ~/.tmux.conf/ ]; then
+  echo "creating ~/.tmux.conf"
+  ln -s ~/Projects/dotfiles/.tmux.conf ~/.tmux.conf
+else
+  echo 'Already create ~/.tmux.conf'
+fi
+
 cd ~/.vim/bundle
 
 if ! [ -d ~/.vim/bundle/ack.vim ]; then
