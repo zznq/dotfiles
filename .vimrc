@@ -41,6 +41,8 @@ map <Leader>s :call RunNearestSpec()
 map <Leader>l :call RunLastSpec()
 map <Leader>a :call RunAllSpecs()
 
+autocmd QuickFixCmdPost *grep* cwindow
+
 let g:rspec_command = "!bin/rspec {spec}"
 
 " syntax highlighting
