@@ -9,6 +9,12 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/Projects/libs/node/bin:$HOME/Project
 
 export PATH
 
+if [ -s "/usr/bin/virtualenvwrapper.sh" ]; then
+  export WORKON_HOME=$HOME/.virtualenvs
+  export PROJECT_HOME=$HOME/directory-you-do-development-in
+  source /usr/bin/virtualenvwrapper.sh
+fi
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 alias be='bundle exec'
