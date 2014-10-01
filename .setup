@@ -37,10 +37,17 @@ fi
 
 if ! [ -d ~/.vim/bundle/ ]; then
   echo "creating ~/.vim/bundle/"
-  mkdir -p ~/.vim/autoload ~/.vim/bundle;
-  curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+  mkdir ~/.vim/bundle;
 else
   echo "Already created ~/.vim/bundle"
+fi
+
+if ! [ -d ~/.vim/autoload/ ]; then
+  echo "creating ~/.vim/autoload"
+  mkdir ~/.vim/autoload;
+  curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+else
+  echo "Already created ~/.vim/autoload"
 fi
 
 if ! [ -d ~/.tmux.conf/ ]; then
