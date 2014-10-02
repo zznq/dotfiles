@@ -45,6 +45,39 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 let g:rspec_command = "!bin/rspec {spec}"
 
+" ==== HashRocket mappings ======
+
+" Align Current Paragraph with Leader + a
+noremap <leader>a =ip
+
+" Toggle Paste Mode
+set pastetoggle=<leader>z
+
+" Shift + Direction to Change Tabs
+noremap <S-l> gt
+noremap <S-h> gT
+
+" Control + Direction to Change Panes
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+
+" Save File with Leader + s
+inoremap <leader>s <C-c>:w<cr>
+
+" === Selecting methods ===
+" MAP: vim, vam to visually select, but almost anything goes. Examples:
+" cim: change method contents
+" dam: delete whole method
+" ,cim: comment out method contents
+
+vmap im <Esc>[mjV]Mk
+vmap am <Esc>[mV]M
+
+omap im :normal vim<CR>
+omap am :normal vam<CR>
+
 " syntax highlighting
 syntax on
 filetype on
