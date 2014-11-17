@@ -82,6 +82,7 @@ function tmux_session() {
     tmux new-window 'vim'
     tmux split-window -h -p 30
     tmux rename-window 'code'
+    tmux select-pane -t 0
     tmux select-window -t 0
     tmux send-keys "$command" Enter
 
