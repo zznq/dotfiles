@@ -155,11 +155,15 @@ if ! [ -d ~/.vim/bundle/tabular ]; then
   git clone git://github.com/godlygeek/tabular.git
 fi
 
+if ! [ -d ~/.vim/bundle/vim-airline ]; then
+  git clone https://github.com/bling/vim-airline.git
+fi
+
 plugins=("ack.vim" "rename.vim" "syntastic" "vim-fugitive" "vim-snipmate"
           "vim-snippets" "ctrlp.vim" "scss-syntax.vim" "tlib_vim" "vim-coffee-script" "vim-Haml"
           "vim-repeat" "vim-unimpaired" "delimitMate" "supertab" "vim-addon-mw-utils" "vim-endwise"
           "vim-mustache-handlebars" "vim-surround" "vim-easymotion" "vim-g" "vim-css-color"
-          "vim-projectionist" "tabular")
+          "vim-projectionist" "tabular" "vim-airline")
 
 echo "********** Update plugins *************"
 for i in "${plugins[@]}"

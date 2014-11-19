@@ -17,6 +17,7 @@ set expandtab
 set smarttab
 
 set autoindent
+set laststatus=2
 
 set hlsearch
 set ignorecase

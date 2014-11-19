@@ -71,7 +71,7 @@ function tmux_session() {
       command="mkvirtualenv $session_name"
   fi
 
-  session="$(tmux ls | grep $session_name)"
+  session="$(tmux ls | grep ^$session_name:)"
   if ! [ -n "$session" ]; then
     echo 'Creating Session'
 
@@ -79,9 +79,14 @@ function tmux_session() {
 
     tmux new-session -d -s $session_name
     tmux rename-window 'consle'
+
     tmux new-window 'vim'
-    tmux split-window -h -p 40
     tmux rename-window 'code'
+
+    tmux split-window -h -p 40
+    tmux select-pane -t 1
+    tmux send-keys "$command" Enter
+
     tmux select-pane -t 0
     tmux select-window -t 0
     tmux send-keys "$command" Enter
