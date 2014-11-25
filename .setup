@@ -159,11 +159,15 @@ if ! [ -d ~/.vim/bundle/vim-airline ]; then
   git clone https://github.com/bling/vim-airline.git
 fi
 
+if ! [ -d ~/.vim/bundle/jshint.vim ]; then
+    git clone https://github.com/wookiehangover/jshint.vim.git
+fi
+
 plugins=("ack.vim" "rename.vim" "syntastic" "vim-fugitive" "vim-snipmate"
           "vim-snippets" "ctrlp.vim" "scss-syntax.vim" "tlib_vim" "vim-coffee-script" "vim-Haml"
           "vim-repeat" "vim-unimpaired" "delimitMate" "supertab" "vim-addon-mw-utils" "vim-endwise"
           "vim-mustache-handlebars" "vim-surround" "vim-easymotion" "vim-g" "vim-css-color"
-          "vim-projectionist" "tabular" "vim-airline")
+          "vim-projectionist" "tabular" "vim-airline" "jshint.vim")
 
 echo "********** Update plugins *************"
 for i in "${plugins[@]}"

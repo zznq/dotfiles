@@ -9,9 +9,9 @@ set number
 set ruler
 set title
 
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set backspace=2
 set expandtab
 set smarttab
@@ -38,10 +38,10 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabNoCompleteAfter = ['^', '\s', '\n']
 
-map <Leader>t :call RunCurrentSpecFile()
-map <Leader>s :call RunNearestSpec()
-map <Leader>l :call RunLastSpec()
-map <Leader>a :call RunAllSpecs()
+"map <Leader>t :call RunCurrentSpecFile()
+"map <Leader>s :call RunNearestSpec()
+"map <Leader>l :call RunLastSpec()
+"map <Leader>a :call RunAllSpecs()
 
 autocmd QuickFixCmdPost *grep* cwindow
 

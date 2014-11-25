@@ -59,7 +59,7 @@ function usernamehost() {
   fi
 }
 
-function tmux_session() {
+function tmux_py_session() {
   session_name=$1
 
   venv="$(lsvirtualenv -b | grep ^$session_name$)"
@@ -78,7 +78,7 @@ function tmux_session() {
     cd $session_name
 
     tmux new-session -d -s $session_name
-    tmux rename-window 'consle'
+    tmux rename-window 'console'
 
     tmux new-window 'vim'
     tmux rename-window 'code'
@@ -90,6 +90,32 @@ function tmux_session() {
     tmux select-pane -t 0
     tmux select-window -t 0
     tmux send-keys "$command" Enter
+
+    cd ..
+  fi
+
+  tmux attach -t $session_name
+}
+
+function tmux_code_session() {
+  session_name=$1
+
+  session="$(tmux ls | grep ^$session_name:)"
+  if ! [ -n "$session" ]; then
+    echo 'Creating Session'
+
+    cd $session_name
+
+    tmux new-session -d -s $session_name
+    tmux rename-window 'console'
+
+    tmux new-window 'vim'
+    tmux rename-window 'code'
+
+    tmux split-window -h -p 40
+
+    tmux select-pane -t 0
+    tmux select-window -t 0
 
     cd ..
   fi
