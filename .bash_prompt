@@ -16,7 +16,7 @@ if tput setaf 1 &> /dev/null; then
 		ORANGE=$(tput setaf 172)
 		GREEN=$(tput setaf 190)
 		PURPLE=$(tput setaf 141)
-		WHITE=$(tput setaf 256)
+		WHITE=$(tput setaf 255)
 	else
 		MAGENTA=$(tput setaf 5)
 		ORANGE=$(tput setaf 4)
@@ -53,9 +53,9 @@ function git_info() {
 # Only show username/host if not default
 function usernamehost() {
 	if [ $USER != $default_username ]; 
-    then echo "${MAGENTA}$USER ${WHITE}at ${ORANGE}$HOSTNAME $WHITEin ";
+    then echo "${MAGENTA}$USER ${WHITE}at ${ORANGE}$HOSTNAME ${WHITE}in ";
   else
-    echo "${ORANGE}$HOSTNAME $WHITEin ";
+    echo "${ORANGE}$HOSTNAME ${WHITE}in ";
   fi
 }
 
@@ -83,7 +83,7 @@ function tmux_py_session() {
     tmux new-window 'vim'
     tmux rename-window 'code'
 
-    tmux split-window -h -p 40
+    tmux split-window -h -p 45
     tmux select-pane -t 1
     tmux send-keys "$command" Enter
 
@@ -112,7 +112,7 @@ function tmux_code_session() {
     tmux new-window 'vim'
     tmux rename-window 'code'
 
-    tmux split-window -h -p 40
+    tmux split-window -h -p 45
 
     tmux select-pane -t 0
     tmux select-window -t 0

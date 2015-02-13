@@ -35,6 +35,13 @@ else
   echo "Already created ~/.vimrc"
 fi
 
+if ! [ -L ~/.jshintrc ]; then
+  echo "Creating ~/.jshintrc"
+  ln -s ~/Projects/dotfiles/.jshintrc ~/.jshintrc
+else
+  echo "Already created ~/.jshintrc"
+fi
+
 if ! [ -d ~/.vim/bundle/ ]; then
   echo "creating ~/.vim/bundle/"
   mkdir ~/.vim/bundle;
@@ -50,7 +57,7 @@ else
   echo "Already created ~/.vim/autoload"
 fi
 
-if ! [ -d ~/.tmux.conf/ ]; then
+if ! [ -d ~/.tmux.conf ]; then
   echo "creating ~/.tmux.conf"
   ln -s ~/Projects/dotfiles/.tmux.conf ~/.tmux.conf
 else
@@ -159,15 +166,19 @@ if ! [ -d ~/.vim/bundle/vim-airline ]; then
   git clone https://github.com/bling/vim-airline.git
 fi
 
-if ! [ -d ~/.vim/bundle/jshint.vim ]; then
-    git clone https://github.com/wookiehangover/jshint.vim.git
+if ! [ -d ~/.vim/bundle/jshint2.vim ]; then
+    git clone https://github.com/Shutnik/jshint2.vim.git
+fi
+
+if ! [ -d ~/.vim/bundle/vim-scala ]; then
+    git clone git@github.com:derekwyatt/vim-scala.git
 fi
 
 plugins=("ack.vim" "rename.vim" "syntastic" "vim-fugitive" "vim-snipmate"
           "vim-snippets" "ctrlp.vim" "scss-syntax.vim" "tlib_vim" "vim-coffee-script" "vim-Haml"
           "vim-repeat" "vim-unimpaired" "delimitMate" "supertab" "vim-addon-mw-utils" "vim-endwise"
           "vim-mustache-handlebars" "vim-surround" "vim-easymotion" "vim-g" "vim-css-color"
-          "vim-projectionist" "tabular" "vim-airline" "jshint.vim")
+          "vim-projectionist" "tabular" "vim-airline" "jshint2.vim" "vim-scala")
 
 echo "********** Update plugins *************"
 for i in "${plugins[@]}"

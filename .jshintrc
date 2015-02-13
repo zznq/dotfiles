@@ -1,0 +1,8 @@
+{
+    "globalstrict": true,
+    "camelcase": false,
+    "latedef": true,
+    "node": true,
+    "mocha": true,
+    "globals": {}
+}
