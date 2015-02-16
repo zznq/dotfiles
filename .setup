@@ -2,42 +2,42 @@
 
 if ! [ -L ~/.bashrc ]; then
   echo "Creating ~/.bashrc"
-  ln -s ~/Projects/dotfiles/.bashrc ~/.bashrc
+  ln -s ~/projects/dotfiles/.bashrc ~/.bashrc
 else
   echo "Already created .bashrc"
 fi
 
 if ! [ -L ~/.bash_profile ]; then
   echo "Creating ~/.bash_profile"
-  ln -s ~/Projects/dotfiles/.bash_profile ~/.bash_profile
+  ln -s ~/projects/dotfiles/.bash_profile ~/.bash_profile
 else
   echo "Already created ~/.bash_profile"
 fi
 
 if ! [ -L ~/.bash_prompt ]; then
   echo "Creating ~/.bash_prompt"
-  ln -s ~/Projects/dotfiles/.bash_prompt ~/.bash_prompt
+  ln -s ~/projects/dotfiles/.bash_prompt ~/.bash_prompt
 else
   echo "Already created ~/.bash_prompt"
 fi
 
 if ! [ -L ~/.functions ]; then
   echo "Creating ~/.functions"
-  ln -s ~/Projects/dotfiles/.functions ~/.functions
+  ln -s ~/projects/dotfiles/.functions ~/.functions
 else
   echo "Already created ~/.functions"
 fi
 
 if ! [ -L ~/.vimrc ]; then
   echo "Creating ~/.vimrc"
-  ln -s ~/Projects/dotfiles/.vimrc ~/.vimrc
+  ln -s ~/projects/dotfiles/.vimrc ~/.vimrc
 else
   echo "Already created ~/.vimrc"
 fi
 
 if ! [ -L ~/.jshintrc ]; then
   echo "Creating ~/.jshintrc"
-  ln -s ~/Projects/dotfiles/.jshintrc ~/.jshintrc
+  ln -s ~/projects/dotfiles/.jshintrc ~/.jshintrc
 else
   echo "Already created ~/.jshintrc"
 fi
@@ -59,7 +59,7 @@ fi
 
 if ! [ -d ~/.tmux.conf ]; then
   echo "creating ~/.tmux.conf"
-  ln -s ~/Projects/dotfiles/.tmux.conf ~/.tmux.conf
+  ln -s ~/projects/dotfiles/.tmux.conf ~/.tmux.conf
 else
   echo 'Already create ~/.tmux.conf'
 fi
