@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if ! [ -L ~/.bashrc ]; then
-  echo "Creating .bashrc"
+  echo "Creating ~/.bashrc"
   ln -s ~/Projects/dotfiles/.bashrc ~/.bashrc
 else
   echo "Already created .bashrc"
