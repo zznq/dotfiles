@@ -1,8 +1,6 @@
 # @gf3’s Sexy Bash Prompt, inspired by “Extravagant Zsh Prompt”
 # Shamelessly copied from https://github.com/gf3/dotfiles
 
-default_username='Joe'
-
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
 	export TERM=gnome-256color
 elif infocmp xterm-256color >/dev/null 2>&1; then
@@ -52,11 +50,7 @@ function git_info() {
 
 # Only show username/host if not default
 function usernamehost() {
-	if [ $USER != $default_username ]; 
-    then echo "${MAGENTA}$USER ${WHITE}at ${ORANGE}$HOSTNAME ${WHITE}in ";
-  else
-    echo "${ORANGE}$HOSTNAME ${WHITE}in ";
-  fi
+    echo "${MAGENTA}$USER${WHITE}@${ORANGE}$HOSTNAME${WHITE}";
 }
 
 function tmux_py_session() {
@@ -134,4 +128,4 @@ function tmux_code_session() {
 # in the iterm tab
 # \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
 
-PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]${BOLD}\$(usernamehost)\[$GREEN\]\w\$(git_info)\[$WHITE\]\n\$ \[$RESET\]"
+PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]${BOLD}\$(usernamehost):\[$GREEN\]\w\$(git_info)\[$WHITE\]\n\$ \[$RESET\]"
