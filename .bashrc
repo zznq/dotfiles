@@ -1,5 +1,9 @@
 # .bashrc
 
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # User specific environment and startup programs

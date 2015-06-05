@@ -42,6 +42,13 @@ else
   echo "Already created ~/.jshintrc"
 fi
 
+if ! [ -d ~/.vim/ ]; then
+  echo "creating ~/vim"
+  mkdir ~/.vim;
+else
+  echo "Already created ~/.vim"
+fi
+
 if ! [ -d ~/.vim/bundle/ ]; then
   echo "creating ~/.vim/bundle/"
   mkdir ~/.vim/bundle;
