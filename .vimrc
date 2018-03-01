@@ -29,6 +29,8 @@ set noerrorbells
 set nostartofline
 set encoding=utf-8 nobomb
 
+set t_Co=256
+
 let mapleader=','
 
 set listchars=tab:>-,trail:~,extends:>,precedes:<
