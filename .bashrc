@@ -7,11 +7,14 @@ fi
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # User specific environment and startup programs
-PATH=$HOME/.rvm.bin:/usr/local/bin:/usr/bin:$PATH
+PATH=$HOME/.pyenv/bin:$HOME/.rvm/bin:/usr/local/bin:/usr/bin:$PATH
 
 PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/Projects/libs/node/bin:$HOME/Projects/libs/android-studio/bin:/usr/local/heroku/bin
 
 export PATH
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 if [ -s "/usr/local/bin/virtualenvwrapper.sh" ]; then
   export WORKON_HOME=$HOME/.virtualenvs
@@ -49,3 +52,6 @@ alias gr='git rebase'
 alias grc='git rebase --continue'
 alias gra='git rebase --abort'
 alias reset-authors='git commit --amend --reset-author -C HEAD'
+
+
+[[ -s "/home/jbuszk/.gvm/scripts/gvm" ]] && source "/home/jbuszk/.gvm/scripts/gvm"
